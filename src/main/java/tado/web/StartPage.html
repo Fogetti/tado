@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- /.website title -->
+<title>Tado Programming Task</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- CSS Files -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+
+<style>
+  body {
+    padding-top: 60px;
+  }
+  @media (max-width: 980px) {
+    body {
+      padding-top: 0;
+    }
+  }
+</style>
+</head>
+<body>
+	<div id="content" class="text-center p-t-2">
+		<a href="#" class="btn btn-lg btn-success" 
+		   data-toggle="modal" 
+		   data-target="#basicModal">Click to open Modal</a>
+		<!-- /.contact section -->
+		<div id="basicModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		            	<h4 class="modal-title" id="myModalLabel">Create an issue</h4>
+		            </div>
+					<!-- /.issue form -->
+					<div class="modal-body">
+						<form method="POST" id="contact-form" class="form-signin form-horizontal" action="#" onSubmit="alert('Thank you for your feedback!');">
+							<div class="form-group">
+					        <label for="Title">Title</label>
+							<input type="text" name="Title" id="Title" class="form-control wow fadeInUp" placeholder="Title" required/>
+							</div>					
+							<div class="form-group">
+					        <label for="Body">Body</label>
+							<textarea name="Body" rows="20" cols="20" id="Body" class="form-control input-message wow fadeInUp"  placeholder="Body" required></textarea>
+							</div>
+						</form>		
+					</div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		                <button type="button" class="btn btn-primary">Create</button>
+		        	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- /.javascript files -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>
