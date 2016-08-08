@@ -12,6 +12,7 @@ public class CreateButton extends Button {
     
     @Override
     public void onSubmit() {
+        setResponsePage(getPage());
     }
     
 

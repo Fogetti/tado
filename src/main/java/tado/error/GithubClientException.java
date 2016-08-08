@@ -10,7 +10,7 @@ public class GithubClientException extends RuntimeException {
         EMPTY_TITLE,
         EMPTY_BODY,
         NO_PULL_ACCESS,
-        UNKNOWN_ERROR
+        SERVER_ERROR
     }
     
     private final CAUSE cause;

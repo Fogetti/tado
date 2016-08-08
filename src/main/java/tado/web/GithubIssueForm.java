@@ -14,7 +14,7 @@ import tado.git.Issue.IssueBuilder;
 public class GithubIssueForm extends StatelessForm<FormInputModel> {
 
     private static final long serialVersionUID = 3392168020298341645L;
-    private IClient client;
+    private transient IClient client;
     
     public GithubIssueForm(String id, IClient client) {
         super(id, new CompoundPropertyModel<>(new FormInputModel()));
@@ -39,10 +39,10 @@ public class GithubIssueForm extends StatelessForm<FormInputModel> {
         Issue issue = IssueBuilder.get().setTitle(model.getTitle()).setBody(model.getBody()).build();
         try {
             client.createIssue(issue);
-            System.out.println("Saved a new issue: " + issue);
-            info("Saved a new issue " + issue);
+            System.out.println("Created a new Github issue: " + issue);
+            info("Created a new  Github issue " + issue);
         } catch(GithubClientException e) {
-            error("Could not save the issue. "+e.getCauseEnum());
+            error("Could not create the Github issue. "+e.getCauseEnum());
         }
     }
 }

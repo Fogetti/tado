@@ -3,11 +3,10 @@ package tado.git;
 import static tado.error.GithubClientException.CAUSE.INVALID_CREDENTIAL;
 import static tado.error.GithubClientException.CAUSE.MISSING_CREDENTIAL;
 import static tado.error.GithubClientException.CAUSE.NO_PULL_ACCESS;
-import static tado.error.GithubClientException.CAUSE.UNKNOWN_ERROR;
+import static tado.error.GithubClientException.CAUSE.SERVER_ERROR;
 
 import java.io.IOException;
 
-import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
@@ -33,6 +32,7 @@ public class GithubClient implements IClient {
         this.repo = repo;
     }
 
+    @Override
     public void createIssue(Issue issue) {
         try {
             if (!github.isCredentialValid())
@@ -40,10 +40,9 @@ public class GithubClient implements IClient {
             GHRepository repository = github.getRepository(repo);
             if (!repository.hasPullAccess())
                 throw new GithubClientException(NO_PULL_ACCESS);
-            GHIssue o = repository.createIssue(issue.title).body(issue.body).create();
-            o.close();
+            repository.createIssue(issue.title).body(issue.body).create();
         } catch (IOException e) {
-            throw new GithubClientException(UNKNOWN_ERROR);
+            throw new GithubClientException(SERVER_ERROR);
         }
     }
 

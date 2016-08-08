@@ -22,6 +22,7 @@ public class App extends WebApplication {
     public void init()
     {
         super.init();
+        getResourceSettings().setThrowExceptionOnMissingResource(true);
         mountPage("/", StartPage.class);
     }
 
