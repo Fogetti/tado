@@ -44,5 +44,25 @@ public class CSSFeedbackPanel extends FeedbackPanel {
                 .add(new AttributeAppender("class", new Model<String>(result), " "));
         return cssclass;
     }
+    
+    @Override
+    protected String getCSSClass(FeedbackMessage message) {
+        String css;
+        switch (message.getLevel()){
+            case FeedbackMessage.SUCCESS:
+                css = "alert-success";
+                break;
+            case FeedbackMessage.INFO:
+                css = "alert-info";
+                break;
+            case FeedbackMessage.ERROR:
+                css = "alert-danger";
+                break;
+            default:
+                css = "alert-info";
+        }
+
+        return css;
+    }
 
 }

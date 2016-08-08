@@ -1,6 +1,14 @@
+/Users/fogetti/Work/tado/src/main/java/tado/web/Start.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/CreateButton.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/CSSFeedbackPanel.java
+/Users/fogetti/Work/tado/src/main/java/tado/git/IClient.java
+/Users/fogetti/Work/tado/src/main/java/tado/git/GithubClient.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/FormInputModel.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/StartPage.java
 /Users/fogetti/Work/tado/src/main/java/tado/error/GithubClientException.java
 /Users/fogetti/Work/tado/src/test/java/tado/git/ClientTest.java
 /Users/fogetti/Work/tado/src/main/java/tado/git/Issue.java
-/Users/fogetti/Work/tado/src/main/java/tado/git/IClient.java
-/Users/fogetti/Work/tado/src/main/java/tado/git/GithubClient.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/App.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/GithubIssueForm.java
+/Users/fogetti/Work/tado/src/main/java/tado/web/TadoSession.java
 /Users/fogetti/Work/tado/src/test/java/tado/git/IssueTest.java

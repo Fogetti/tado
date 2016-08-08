@@ -21,7 +21,7 @@ public class StartPage extends WebPage {
             setLoginForm("form", client);
         }
     }
-
+    
     private IClient buildGithubClient() {
         GithubClient client = new GithubClient("/Users/fogetti/Work/tado/.github", "Fogetti/tado");
         return client;
