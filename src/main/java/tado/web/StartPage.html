@@ -30,9 +30,12 @@
 </head>
 <body>
 	<div id="content" class="text-center p-t-2">
+	    <div id="feedbackPanel">
+        	<span wicket:id="feedback"></span>
+    	</div>
 		<a href="#" class="btn btn-lg btn-success" 
 		   data-toggle="modal" 
-		   data-target="#basicModal">Click to open Modal</a>
+		   data-target="#basicModal">Click to create an issue</a>
 		<!-- /.contact section -->
 		<div id="basicModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 		    <div class="modal-dialog">
@@ -41,22 +44,22 @@
 		            	<h4 class="modal-title" id="myModalLabel">Create an issue</h4>
 		            </div>
 					<!-- /.issue form -->
-					<div class="modal-body">
-						<form method="POST" id="contact-form" class="form-signin form-horizontal" action="#" onSubmit="alert('Thank you for your feedback!');">
-							<div class="form-group">
-					        <label for="Title">Title</label>
-							<input type="text" name="Title" id="Title" class="form-control wow fadeInUp" placeholder="Title" required/>
-							</div>					
-							<div class="form-group">
-					        <label for="Body">Body</label>
-							<textarea name="Body" rows="20" cols="20" id="Body" class="form-control input-message wow fadeInUp"  placeholder="Body" required></textarea>
-							</div>
-						</form>		
-					</div>
-		            <div class="modal-footer">
-		                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		                <button type="button" class="btn btn-primary">Create</button>
-		        	</div>
+					<form wicket:id="form" method="POST" id="contact-form" class="form-signin form-horizontal">
+						<div class="modal-body">
+								<div class="form-group">
+						        <label for="Title">Title</label>
+								<input wicket:id="title" type="text" name="Title" id="Title" class="form-control wow fadeInUp" placeholder="Title" required/>
+								</div>					
+								<div class="form-group">
+						        <label for="Body">Body</label>
+								<textarea wicket:id="body" name="Body" rows="20" cols="20" id="Body" class="form-control input-message wow fadeInUp"  placeholder="Body" required></textarea>
+								</div>
+						</div>
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			                <button wicket:id="createButton" type="submit" class="btn btn-primary">Create</button>
+			        	</div>
+					</form>		
 				</div>
 			</div>
 		</div>

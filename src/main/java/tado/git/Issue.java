@@ -42,4 +42,10 @@ public class Issue {
             return new Issue(this.title, this.body);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Issue [title=" + title + ", body=" + body + "]";
+    }
+    
 }

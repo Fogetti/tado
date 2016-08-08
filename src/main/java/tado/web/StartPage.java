@@ -1,6 +1,10 @@
 package tado.web;
 
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
+
+import tado.git.GithubClient;
+import tado.git.IClient;
 
 public class StartPage extends WebPage {
 
@@ -9,13 +13,26 @@ public class StartPage extends WebPage {
     @Override
     protected void onInitialize() {
         super.onInitialize();
-
+        
+        IClient client = buildGithubClient();
+        
+        setFeedbackPanel();
         if (get("form") == null) {
-            setLoginForm("form");
+            setLoginForm("form", client);
         }
     }
 
-    void setLoginForm(String componentId) {
-        add(new GithubIssueForm(componentId));
+    private IClient buildGithubClient() {
+        GithubClient client = new GithubClient("/Users/fogetti/Work/tado/.github", "Fogetti/tado");
+        return client;
+    }
+
+    void setFeedbackPanel() {
+        final FeedbackPanel feedback = new CSSFeedbackPanel("feedback");
+        add(feedback);
+    }
+    
+    void setLoginForm(String componentId, IClient client) {
+        add(new GithubIssueForm(componentId, client));
     }
 }
