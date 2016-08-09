@@ -3,6 +3,7 @@ package tado.web;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
@@ -30,7 +31,9 @@ public class StartPage extends WebPage {
         @Override
         protected List<Issue> load()
         {
-            return buildGithubClient().issues();
+            IClient client = buildGithubClient();
+            if (client == null) return Collections.emptyList();
+            return client.issues();
         }
     }
 
