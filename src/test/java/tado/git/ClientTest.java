@@ -105,6 +105,5 @@ public class ClientTest {
         }
         
         verify(builder, atLeast(1)).create();
-        verify(value, atLeast(1)).close();
     }
 }
