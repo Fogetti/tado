@@ -84,12 +84,12 @@ public class StartPage extends WebPage {
         return prop;
     }
 
-    void setFeedbackPanel() {
+    private void setFeedbackPanel() {
         final FeedbackPanel feedback = new CSSFeedbackPanel("feedback");
         add(feedback);
     }
 
-    void setLoginForm(String componentId, IClient client) {
+    private void setLoginForm(String componentId, IClient client) {
         GithubIssueForm form = new GithubIssueForm(componentId, client);
         form.setVisible(client == null ? false : true);
         add(form);
