@@ -3,12 +3,16 @@ package tado.git;
 import static tado.error.GithubClientException.CAUSE.EMPTY_BODY;
 import static tado.error.GithubClientException.CAUSE.EMPTY_TITLE;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang.StringUtils;
 
 import tado.error.GithubClientException;
 
-public class Issue {
+public class Issue implements Serializable {
 
+    private static final long serialVersionUID = -2696356142600811158L;
+    
     public final String title;
     public final String body;
     

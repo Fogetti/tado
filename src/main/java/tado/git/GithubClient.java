@@ -6,12 +6,18 @@ import static tado.error.GithubClientException.CAUSE.NO_PULL_ACCESS;
 import static tado.error.GithubClientException.CAUSE.SERVER_ERROR;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
+import org.kohsuke.github.GHIssue;
+import org.kohsuke.github.GHIssueState;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
 import tado.error.GithubClientException;
+import tado.git.Issue.IssueBuilder;
 
 public class GithubClient implements IClient {
     
@@ -44,6 +50,22 @@ public class GithubClient implements IClient {
         } catch (IOException e) {
             throw new GithubClientException(SERVER_ERROR);
         }
+    }
+
+    @Override
+    public List<Issue> issues() {
+        List<Issue> issues = new ArrayList<>();
+        try {
+            GHRepository repository = github.getRepository(repo);
+            List<GHIssue> list = repository.getIssues(GHIssueState.ALL);
+            issues.addAll(list
+                .stream()
+                .map(ghIssue -> IssueBuilder.get().setTitle(ghIssue.getTitle()).setBody(ghIssue.getBody()).build())
+                .collect(Collectors.toList()));
+        } catch (IOException e) {
+            throw new GithubClientException(SERVER_ERROR);
+        }
+        return issues;
     }
 
 }

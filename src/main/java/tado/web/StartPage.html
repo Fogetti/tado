@@ -37,8 +37,8 @@
     	</div>
 		<a href="#" class="btn btn-lg btn-success" 
 		   data-toggle="modal" 
-		   data-target="#basicModal">Click to create an issue</a>
-		<!-- /.contact section -->
+		   data-target="#basicModal">Click to create a new issue</a>
+		<!-- /.modal section -->
 		<div id="basicModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 		    <div class="modal-dialog">
 		        <div class="modal-content">
@@ -63,6 +63,15 @@
 			        	</div>
 					</form>		
 				</div>
+			</div>
+		</div>
+		<div id="content" class="text-center">
+			<h4>Issues which were created earlier:</h4>
+		</div>
+		<div wicket:id="issues" class="list-group">
+			<div class="list-group-item">
+				<h4 wicket:id="title" class="list-group-item-heading">List group item heading</h4>
+				<p wicket:id="body" class="list-group-item-text">...</p>
 			</div>
 		</div>
 	</div>
